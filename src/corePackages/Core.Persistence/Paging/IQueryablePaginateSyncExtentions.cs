@@ -9,6 +9,7 @@ namespace Core.Persistence.Paging
 {
     public static class IQueryablePaginateSyncExtentions
     {
+        //will change the name
         public static IPaginate<T> ToPaginateSync<T>(this IQueryable<T> source, int index, int size, int from = 0)
         {
             if (from > index) throw new ArgumentException($"From: {from} > Index: {index}, must From <= Index");

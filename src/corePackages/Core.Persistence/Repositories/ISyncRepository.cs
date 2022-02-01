@@ -11,6 +11,7 @@ namespace Core.Persistence.Repositories
 {
     public interface ISyncRepository<T> where T : Entity
     {
+       
         T Get(Expression<Func<T, bool>> predicate);
         IPaginate<T> GetList(Expression<Func<T, bool>> predicate = null,
             Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
