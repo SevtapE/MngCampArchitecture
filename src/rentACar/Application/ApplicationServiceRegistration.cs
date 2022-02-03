@@ -1,4 +1,6 @@
 ﻿using Application.Features.Brands.Rules;
+using Application.Features.Colors.Rules;
+using Application.Features.Fuels.Rules;
 using Application.Features.Models.Rules;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,6 +21,8 @@ namespace Application
             services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddScoped<BrandBusinessRules>();
             services.AddScoped<ModelBusinessRules>();
+            services.AddScoped<ColorBusinessRules>();
+            services.AddScoped<FuelBusinessRules>();
             return services;
 
         

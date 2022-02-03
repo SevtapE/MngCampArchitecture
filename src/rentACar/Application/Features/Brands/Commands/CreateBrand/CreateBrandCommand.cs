@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Application.Features.Brands.Commands.CreateBrand
 {
     public class CreateBrandCommand:IRequest<Brand>
@@ -19,7 +20,7 @@ namespace Application.Features.Brands.Commands.CreateBrand
             IBrandRepository _brandRepository;
             IMapper _mapper;
             BrandBusinessRules _brandBusinessRules;
-
+            
             public CreateBrandCommandHandler(IBrandRepository brandRepository, IMapper mapper, BrandBusinessRules brandBusinessRules)
             {
                 _brandRepository = brandRepository;
@@ -29,7 +30,7 @@ namespace Application.Features.Brands.Commands.CreateBrand
 
             public async Task<Brand> Handle(CreateBrandCommand request, CancellationToken cancellationToken)
             {
-                await _brandBusinessRules.BrandNameCanNotBeDuplicatedWhenInserted(request.Name);
+                await _brandBusinessRules.BrandNameCanNotBeDuplicatedWhenInsertedAndUpdated(request.Name);
                 var mappedBrand=_mapper.Map<Brand>(request);
                 var createdBrand = await _brandRepository.AddAsync(mappedBrand);
                 return createdBrand;

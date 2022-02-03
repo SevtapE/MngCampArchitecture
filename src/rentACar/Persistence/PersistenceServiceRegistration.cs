@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Persistence.Context;
 using Persistence.Repositories;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,10 @@ namespace Persistence
             services.AddDbContext<BaseDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("rentACarConnectionString")));
             services.AddScoped<IBrandRepository, BrandRepository>();
             services.AddScoped<IModelRepository, ModelRepository>();
+            services.AddScoped<IColorRepository, ColorRepository>();
+            services.AddScoped<ICarRepository, CarRepository>();
+            services.AddScoped<IFuelRepository, FuelRepository>();
+            services.AddScoped<ITransmissionRepository, TransmissionRepository>();
             return services;
         }
     }
