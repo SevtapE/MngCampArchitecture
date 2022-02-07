@@ -1,4 +1,5 @@
 ﻿using Application.Services.Repositories;
+using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,6 +23,8 @@ namespace Persistence
             services.AddScoped<IColorRepository, ColorRepository>();
             services.AddScoped<ICarRepository, CarRepository>();
             services.AddScoped<IFuelRepository, FuelRepository>();
+            services.AddScoped<IIndividualCustomerRepository, IndividualCustomerRepository>();
+            services.AddScoped<ICorparateCustomerRepository, CorparateCustomerRepository>();
             services.AddScoped<ITransmissionRepository, TransmissionRepository>();
             return services;
         }

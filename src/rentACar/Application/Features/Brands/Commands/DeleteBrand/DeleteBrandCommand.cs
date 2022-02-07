@@ -36,7 +36,7 @@ namespace Application.Features.Brands.Commands.DeleteBrand
                 if (brandToDelete == null)
                     throw new BusinessException("Brand cannot found");
 
-
+                
                 await _brandRepository.DeleteAsync(brandToDelete);
               
                 return new NoContent();

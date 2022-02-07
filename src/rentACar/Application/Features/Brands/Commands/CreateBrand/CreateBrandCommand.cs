@@ -43,7 +43,7 @@ namespace Application.Features.Brands.Commands.CreateBrand
                     Subject="New brand added",
                     HtmlBody="Hey, check the system"
                 };
-                _mailService.SendMail(mail);
+               // _mailService.SendMail(mail);
                 return createdBrand;
             }
         }

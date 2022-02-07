@@ -1,4 +1,5 @@
 ﻿using Domain.Entities;
+using Domain.Entities.Abstract;
 using Domain.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -20,6 +21,9 @@ namespace Persistence.Context
         public DbSet<Color> Colors { get; set; }
         public DbSet<Transmission> Transmissions { get; set; }
         public DbSet<Fuel> Fuels { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<IndividualCustomer> IndividualCustomers { get; set; }
+        public DbSet<CorparateCustomer> CorparateCustomers { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //if (!optionsBuilder.IsConfigured)
@@ -37,6 +41,32 @@ namespace Persistence.Context
                 b.Property(p => p.Id).HasColumnName("Id");
                 b.Property(p => p.Name).HasColumnName("Name");
                 b.HasMany(p => p.Models);
+
+            });
+            modelBuilder.Entity<Customer>(b =>
+            {
+                b.ToTable("Customers").HasKey(k => k.Id);
+                b.Property(p => p.Id).HasColumnName("Id");
+                b.Property(p => p.Email).HasColumnName("Email");
+          
+
+            });
+            modelBuilder.Entity<IndividualCustomer>(b =>
+            {
+                b.ToTable("IndividualCustomers");
+                b.Property(p => p.FirstName).HasColumnName("FirstName");
+                b.Property(p => p.LastName).HasColumnName("LastName");
+                b.Property(p => p.NatianalId).HasColumnName("NatianalId");
+
+
+            });
+            modelBuilder.Entity<CorparateCustomer>(b =>
+            {
+                b.ToTable("CorparateCustomers");
+                b.Property(p => p.CompanyName).HasColumnName("CompanyName");
+                b.Property(p => p.TaxNumber).HasColumnName("TaxNumber");
+               
+
 
             });
             modelBuilder.Entity<Color>(b =>
