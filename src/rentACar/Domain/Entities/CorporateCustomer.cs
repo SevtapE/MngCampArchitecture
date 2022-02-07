@@ -7,21 +7,21 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    public class CorparateCustomer:Customer
+    public class CorporateCustomer : Customer
     {
   
 
         public string CompanyName { get; set; }
         public string TaxNumber { get; set; }
 
-        public CorparateCustomer(int id, string email, string companyName, string taxNumber):this()
+        public CorporateCustomer(int id, string email, string companyName, string taxNumber):this()
         {
             CompanyName = companyName;
             TaxNumber = taxNumber;
             Id = id;
             Email = email;
         }
-        public CorparateCustomer()
+        public CorporateCustomer()
         {
         }
     }

@@ -23,7 +23,7 @@ namespace Persistence.Context
         public DbSet<Fuel> Fuels { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<IndividualCustomer> IndividualCustomers { get; set; }
-        public DbSet<CorparateCustomer> CorparateCustomers { get; set; }
+        public DbSet<CorporateCustomer> CorporateCustomers { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //if (!optionsBuilder.IsConfigured)
@@ -60,9 +60,9 @@ namespace Persistence.Context
 
 
             });
-            modelBuilder.Entity<CorparateCustomer>(b =>
+            modelBuilder.Entity<CorporateCustomer>(b =>
             {
-                b.ToTable("CorparateCustomers");
+                b.ToTable("CorporateCustomers");
                 b.Property(p => p.CompanyName).HasColumnName("CompanyName");
                 b.Property(p => p.TaxNumber).HasColumnName("TaxNumber");
                

@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace Persistence.Repositories
 {
-    public class CorparateCustomerRepository : EfRepositoryBase<CorparateCustomer, BaseDbContext>, ICorparateCustomerRepository
+    public class CorporateCustomerRepository : EfRepositoryBase<CorporateCustomer, BaseDbContext>, ICorporateCustomerRepository
     {
-        public CorparateCustomerRepository(BaseDbContext context) : base(context)
+        public CorporateCustomerRepository(BaseDbContext context) : base(context)
         {
         }
     }
