@@ -13,7 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Application.Features.Cars.Commands.CreateBrand
+namespace Application.Features.Cars.Commands.CreateCars
 {
     public class CreateCarCommand : IRequest<Car>
     {

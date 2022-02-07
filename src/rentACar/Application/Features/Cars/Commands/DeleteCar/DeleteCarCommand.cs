@@ -13,7 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Application.Features.Cars.Commands.DeleteBrand
+namespace Application.Features.Cars.Commands.DeleteCars
 {
     public class DeleteCarCommand : IRequest<NoContent>
     {

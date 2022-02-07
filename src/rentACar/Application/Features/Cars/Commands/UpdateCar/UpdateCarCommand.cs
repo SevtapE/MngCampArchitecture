@@ -16,7 +16,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Application.Features.Cars.Commands.UpdateBrand
+namespace Application.Features.Cars.Commands.UpdateCars
 {
     public class UpdateCarCommand : IRequest<CarDto>
     {
