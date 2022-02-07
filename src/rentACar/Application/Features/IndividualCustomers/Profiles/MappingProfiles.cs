@@ -1,4 +1,6 @@
-﻿using Application.Features.IndividualCustomers.Commands;
+﻿using Application.Features.IndividualCustomers.Commands.CreateIndividualCustomer;
+using Application.Features.IndividualCustomers.Commands.DeleteIndividualCustomer;
+using Application.Features.IndividualCustomers.Commands.UpdateIndividualCustomer;
 using Application.Features.IndividualCustomers.Dtos;
 using Application.Features.IndividualCustomers.Models;
 using Application.Features.IndividualCustomers.Queries;

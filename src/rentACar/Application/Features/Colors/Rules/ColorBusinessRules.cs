@@ -16,7 +16,7 @@ namespace Application.Features.Colors.Rules
         {
             _colorRepository = colorRepository;
         }
-        public async Task ColorNameCanNotBeDuplicatedWhenInserted(string name)
+        public async Task ColorNameCanNotBeDuplicatedWhenInsertedAndUpdated(string name)
         {
             var result = await _colorRepository.GetListAsync(b => b.Name == name);
             if (result.Items.Any())

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Features.IndividualCustomers.Commands
+namespace Application.Features.IndividualCustomers.Commands.DeleteIndividualCustomer
 {
     public class DeleteIndividualCustomerCommand:IRequest<NoContent>
     {

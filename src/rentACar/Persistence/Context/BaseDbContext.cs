@@ -1,5 +1,4 @@
 ﻿using Domain.Entities;
-using Domain.Entities.Abstract;
 using Domain.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;

@@ -23,23 +23,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\CorparateCustomers\Commands\" />
-    <Folder Include="Features\CorparateCustomers\Dtos\" />
-    <Folder Include="Features\CorparateCustomers\Models\" />
-    <Folder Include="Features\CorparateCustomers\Profiles\" />
-    <Folder Include="Features\CorparateCustomers\Queries\" />
-    <Folder Include="Features\CorparateCustomers\Rules\" />
-    <Folder Include="Features\CorparateCustomers\Tests\" />
+    <Folder Include="Features\CorporateCustomers\Tests\" />
     <Folder Include="Features\IndividualCustomers\Tests\" />
     <Folder Include="Features\Fuels\Tests\" />
-    <Folder Include="Features\Transmissions\Commands\CreateTransmission\" />
-    <Folder Include="Features\Transmissions\Commands\DeleteTransmission\" />
-    <Folder Include="Features\Transmissions\Commands\UpdateTransmission\" />
-    <Folder Include="Features\Transmissions\Dtos\" />
-    <Folder Include="Features\Transmissions\Models\" />
-    <Folder Include="Features\Transmissions\Profiles\" />
-    <Folder Include="Features\Transmissions\Queries\" />
-    <Folder Include="Features\Transmissions\Rules\" />
     <Folder Include="Features\Transmissions\Tests\" />
     <Folder Include="Features\Colors\Queries\" />
     <Folder Include="Features\Colors\Tests\" />

@@ -1,5 +1,4 @@
-﻿using Application.Features.Brands.Rules;
-using Application.Features.Colors.Rules;
+﻿using Application.Features.Colors.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
 using Domain.Entities;
@@ -31,7 +30,7 @@ namespace Application.Features.Colors.Commands.CreateColor
 
             public async Task<Color> Handle(CreateColorCommand request, CancellationToken cancellationToken)
             {
-                await _colorBusinessRules.ColorNameCanNotBeDuplicatedWhenInserted(request.Name);
+                await _colorBusinessRules.ColorNameCanNotBeDuplicatedWhenInsertedAndUpdated(request.Name);
                 var mappedColor=_mapper.Map<Color>(request);
                 var createdColor = await _colorRepository.AddAsync(mappedColor);
                 return createdColor;
