@@ -30,7 +30,6 @@
     <Folder Include="Features\CorparateCustomers\Queries\" />
     <Folder Include="Features\CorparateCustomers\Rules\" />
     <Folder Include="Features\CorparateCustomers\Tests\" />
-    <Folder Include="Features\IndividualCustomers\Profiles\" />
     <Folder Include="Features\IndividualCustomers\Tests\" />
     <Folder Include="Features\Fuels\Tests\" />
     <Folder Include="Features\Transmissions\Commands\CreateTransmission\" />

@@ -11,13 +11,13 @@ namespace Domain.Entities
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string NatianalId { get; set; }
+        public string NationalId { get; set; }
 
-        public IndividualCustomer(int id, string email,string firstName, string lastName, string natianalId):this()
+        public IndividualCustomer(int id, string email,string firstName, string lastName, string nationalId):this()
         {
             FirstName = firstName;
             LastName = lastName;
-            NatianalId = natianalId;
+            NationalId = nationalId;
             Id = id;
             Email = email;
         }

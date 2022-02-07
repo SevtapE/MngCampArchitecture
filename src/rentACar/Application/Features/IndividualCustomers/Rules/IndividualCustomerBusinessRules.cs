@@ -17,9 +17,9 @@ namespace Application.Features.IndividualCustomers.Rules
             _ındividualCustomerRepository = ındividualCustomerRepository;
         }
 
-        public async Task NationalIdCanBotBeDublicated(string natianalId)
+        public async Task NationalIdCanBotBeDublicated(string nationalId)
         {
-            var result = await _ındividualCustomerRepository.GetListAsync(c => c.NatianalId == natianalId);
+            var result = await _ındividualCustomerRepository.GetListAsync(c => c.NationalId == nationalId);
             if (result.Items.Any())
             {
                 throw new BusinessException("NationalId cannot be dublicated");

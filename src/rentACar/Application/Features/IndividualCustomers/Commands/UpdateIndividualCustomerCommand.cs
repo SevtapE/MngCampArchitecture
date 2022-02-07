@@ -19,7 +19,7 @@ namespace Application.Features.IndividualCustomers.Commands
         public string Email { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string NatinalId { get; set; }
+        public string NationalId { get; set; }
 
         public class UpdateIndividualCustomerCommandHandler : IRequestHandler<UpdateIndividualCustomerCommand, IndividualCustomerDto>
         {
@@ -38,7 +38,7 @@ namespace Application.Features.IndividualCustomers.Commands
             {
                 var individualCustomerToUpdate = await _individualCustomerRepository.GetAsync(c => c.Id == request.Id);
                 if (individualCustomerToUpdate == null) throw new BusinessException(" Customer can not be found");
-              await _individualCustomerBusinessRules.NationalIdCanBotBeDublicated(request.NatinalId);
+              await _individualCustomerBusinessRules.NationalIdCanBotBeDublicated(request.NationalId);
              _mapper.Map(request, individualCustomerToUpdate);
                 await _individualCustomerRepository.UpdateAsync(individualCustomerToUpdate);
                 var mappedIndividualCustomer =  _mapper.Map<IndividualCustomerDto>(individualCustomerToUpdate);

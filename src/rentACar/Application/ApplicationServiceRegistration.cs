@@ -1,6 +1,7 @@
 ﻿using Application.Features.Brands.Rules;
 using Application.Features.Colors.Rules;
 using Application.Features.Fuels.Rules;
+using Application.Features.IndividualCustomers.Rules;
 using Application.Features.Models.Rules;
 using Core.Application.Pipelines.Validation;
 using FluentValidation;
@@ -26,6 +27,7 @@ namespace Application
             services.AddScoped<ModelBusinessRules>();
             services.AddScoped<ColorBusinessRules>();
             services.AddScoped<FuelBusinessRules>();
+            services.AddScoped<IndividualCustomerBusinessRules>();
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
             return services;
 

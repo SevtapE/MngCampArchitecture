@@ -56,7 +56,7 @@ namespace Persistence.Context
                 b.ToTable("IndividualCustomers");
                 b.Property(p => p.FirstName).HasColumnName("FirstName");
                 b.Property(p => p.LastName).HasColumnName("LastName");
-                b.Property(p => p.NatianalId).HasColumnName("NatianalId");
+                b.Property(p => p.NationalId).HasColumnName("NationalId");
 
 
             });

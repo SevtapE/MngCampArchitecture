@@ -17,16 +17,24 @@ namespace Application.Features.IndividualCustomers.Commands
         public string Email { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string NatinalId { get; set; }
+        public string NationalId { get; set; }
 
         public class CreateIndividualCustomerCommandHandlar : IRequestHandler<CreateIndividualCustomerCommand, IndividualCustomer>
         {
             IIndividualCustomerRepository _individualCustomerRepository;
             IMapper _mapper;
             IndividualCustomerBusinessRules _individualCustomerBusinessRules;
+
+            public CreateIndividualCustomerCommandHandlar(IIndividualCustomerRepository individualCustomerRepository, IMapper mapper, IndividualCustomerBusinessRules individualCustomerBusinessRules)
+            {
+                _individualCustomerRepository = individualCustomerRepository;
+                _mapper = mapper;
+                _individualCustomerBusinessRules = individualCustomerBusinessRules;
+            }
+
             public async Task<IndividualCustomer> Handle(CreateIndividualCustomerCommand request, CancellationToken cancellationToken)
             {
-                await _individualCustomerBusinessRules.NationalIdCanBotBeDublicated(request.NatinalId);
+                await _individualCustomerBusinessRules.NationalIdCanBotBeDublicated(request.NationalId);
 
                var mappedIndividualCustomer= _mapper.Map<IndividualCustomer>(request);
                var createdIndividualCustomer= await _individualCustomerRepository.AddAsync(mappedIndividualCustomer);
