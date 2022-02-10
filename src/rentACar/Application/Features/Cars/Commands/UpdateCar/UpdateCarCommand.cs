@@ -1,6 +1,4 @@
-﻿using Application.Features.Brands.Dtos;
-using Application.Features.Brands.Rules;
-using Application.Features.Cars.Dtos;
+﻿using Application.Features.Cars.Dtos;
 using Application.Features.Cars.Rules;
 using Application.Services.Repositories;
 using AutoMapper;

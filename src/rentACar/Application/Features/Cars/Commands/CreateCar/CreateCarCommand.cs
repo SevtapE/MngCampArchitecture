@@ -1,5 +1,4 @@
-﻿using Application.Features.Brands.Rules;
-using Application.Features.Cars.Rules;
+﻿using Application.Features.Cars.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
 using Core.Mailing;
@@ -27,7 +26,7 @@ namespace Application.Features.Cars.Commands.CreateCars
             ICarRepository _carRepository;
             IMapper _mapper;
             CarBusinessRules _carBusinessRules;
-            IMailService _mailService;
+         
 
             public CreateCarCommandHandler(ICarRepository carRepository, IMapper mapper, CarBusinessRules carBusinessRules)
             {

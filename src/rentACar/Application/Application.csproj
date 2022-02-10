@@ -19,10 +19,12 @@
     <ProjectReference Include="..\..\corePackages\Core.CrossCuttingConcerns\Core.CrossCuttingConcerns.csproj" />
     <ProjectReference Include="..\..\corePackages\Core.Mailing\Core.Mailing.csproj" />
     <ProjectReference Include="..\..\corePackages\Core.Persistence\Core.Persistence.csproj" />
+    <ProjectReference Include="..\..\corePackages\Core.Security\Core.Security.csproj" />
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Features\Users\Tests\" />
     <Folder Include="Features\CorporateCustomers\Tests\" />
     <Folder Include="Features\IndividualCustomers\Tests\" />
     <Folder Include="Features\Fuels\Tests\" />

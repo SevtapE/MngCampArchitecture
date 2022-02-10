@@ -1,6 +1,7 @@
 ﻿using Application.Features.CorporateCustomers.Commands;
+using Application.Features.CorporateCustomers.Commands.CreateCorporateCustomer;
+using Application.Features.CorporateCustomers.Commands.DeleteCorporateCustomer;
 using Application.Features.CorporateCustomers.Commands.UpdateCorporateCustomer;
-using Application.Features.CorporateCustomers.DeleteCorporateCustomer;
 using Application.Features.CorporateCustomers.Dtos;
 using Application.Features.CorporateCustomers.Models;
 using AutoMapper;

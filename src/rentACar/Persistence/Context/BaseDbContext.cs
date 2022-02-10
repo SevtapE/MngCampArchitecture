@@ -1,4 +1,5 @@
-﻿using Domain.Entities;
+﻿using Core.Security.Entities;
+using Domain.Entities;
 using Domain.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -20,6 +21,9 @@ namespace Persistence.Context
         public DbSet<Color> Colors { get; set; }
         public DbSet<Transmission> Transmissions { get; set; }
         public DbSet<Fuel> Fuels { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<OperationClaim> OperationClaims { get; set; }
+        public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<IndividualCustomer> IndividualCustomers { get; set; }
         public DbSet<CorporateCustomer> CorporateCustomers { get; set; }
@@ -122,6 +126,35 @@ namespace Persistence.Context
                 m.HasOne(p => p.Transmission);
                 m.HasOne(p => p.Fuel);
                 m.HasMany(p => p.Cars);
+
+            });
+            modelBuilder.Entity<UserOperationClaim>(b =>
+            {
+                b.ToTable("UserOperationClaims").HasKey(k => k.Id);
+                b.Property(p => p.Id).HasColumnName("Id");
+                b.Property(p => p.UserId).HasColumnName("UserId");
+                b.Property(p => p.OperationClaimId).HasColumnName("OperationClaimId");
+                
+
+            });
+            modelBuilder.Entity<User>(b =>
+            {
+                b.ToTable("Users").HasKey(k => k.Id);
+                b.Property(p => p.Id).HasColumnName("Id");
+                b.Property(p => p.FirstName).HasColumnName("FirstName");
+                b.Property(p => p.LastName).HasColumnName("LastName");
+                b.Property(p => p.Email).HasColumnName("Email");
+                b.Property(p => p.PasswordHash).HasColumnName("PasswordHash");
+                b.Property(p => p.PasswordSalt).HasColumnName("PasswordSalt");
+                b.Property(p => p.Status).HasColumnName("Status");
+
+            });
+            modelBuilder.Entity<OperationClaim>(b =>
+            {
+                b.ToTable("OperationClaims").HasKey(k => k.Id);
+                b.Property(p => p.Id).HasColumnName("Id");
+                b.Property(p => p.Name).HasColumnName("Name");
+           
 
             });
 

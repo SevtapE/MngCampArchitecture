@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Features.CorporateCustomers.Commands
+namespace Application.Features.CorporateCustomers.Commands.CreateCorporateCustomer
 {
     public class CreateCorporateCustomerCommand : IRequest<CorporateCustomer>
     {
